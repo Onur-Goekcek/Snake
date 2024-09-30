@@ -1,4 +1,3 @@
-# Snake
 unit AddresseBuch;
 
 interface
@@ -42,6 +41,7 @@ spieleStatus=(sSnake,SnakeKopf, sPower, sleer,SnakeEnde,sHinderniss);
     procedure Pruefen;
     procedure NeuesSpiel;
     procedure AnimationBewegung;
+    procedure HinternissErstellen;
   public
     { Public-Deklarationen }
   end;
@@ -77,7 +77,7 @@ begin
   FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
   FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
   FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
-  FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,0,animationsbreite+3,Breite));
+  FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,0,animationsbreite,Breite));
   end
 
   else if (SnakeEndePos=Schlange[0,1]+1) then begin                       //links leer
@@ -174,7 +174,7 @@ KopfBreite:=KopfBreite+Eingabe;
      AnimationTimer.Enabled:=True;
   end
 
-  else if SpielStatus[Kopfbreite,Kopfhoehe]=sSnake then begin
+  else if (SpielStatus[Kopfbreite,Kopfhoehe]=sSnake) or (SpielStatus[Kopfbreite,Kopfhoehe]=sHinderniss) then begin
   SnakeMove.Enabled:=false;
   showmessage('Verloren Schlangen länge '+inttostr(SnakeLen+1));
   exit;
@@ -191,6 +191,7 @@ FspieleBmp[sLeer]:= TBitMap.Create;
 FspieleBmp[sPower]:= TBitMap.Create;
 FSpieleBmp[SnakeKopf]:= TBitMap.Create;
 FSpieleBmp[SnakeEnde]:= TBitMap.Create;
+FSpieleBmp[sHinderniss]:= TBitMap.Create;
 FGrafik.Width := SpieleFeld.Width;
 FGrafik.Height := SpieleFeld.Height;
 Gitter;
@@ -261,6 +262,7 @@ Symbolerstellen(breite,sLeer);
 symbolerstellen(breite,sPower);
 symbolerstellen(breite,SnakeKopf);
 symbolerstellen(breite,SnakeEnde);
+symbolerstellen(breite,sHinderniss);
 NeuesSpiel;
 end;
 
@@ -276,11 +278,9 @@ FGrafik.Canvas.Rectangle(0,0,FGrafik.Width, FGrafik.Height);
   for I:=0  to a-1 do begin
     for j := 0 to b-1 do begin
       if (i=KopfBreite) and (j=KopfHoehe) then  begin
-//      FGrafik.Canvas.Draw(i*breite,j*breite,FSpieleBmp[SpielStatus[i,j]])
+
       end
-//      else if (i=SnakeEndePos) and (j=SnakeEndePos2) then begin
-//
-//      end
+
 
 
       else
@@ -291,6 +291,20 @@ FGrafik.Canvas.Rectangle(0,0,FGrafik.Width, FGrafik.Height);
 end;
 
 
+
+procedure TForm2.HinternissErstellen;
+var
+HindernissBreite, HindernissHoehe:Integer;
+begin
+HindernissBreite:=0;
+HindernissHoehe:=0;
+while (HindernissBreite=0) or (HindernissHoehe=0) do begin
+  HindernissBreite:=random(a)-2;
+  HindernissHoehe:=random(b)-7;
+end;
+
+
+end;
 
 procedure animation; begin
 
@@ -318,6 +332,7 @@ SpielStatus[3,3]:=sSnake;
 SpielStatus[2,3]:=sSnake;
 SpielStatus[1,3]:=sSnake;
 Powererstellen;
+HinternissErstellen;
 spielaktive:=True;
 Eingabe:=1;
 andereEingabe:=0;
@@ -388,6 +403,11 @@ FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite);
   else if spieler=sPower then begin
     FSpieleBmp[spieler].Canvas.Pen.Color := clGreen;
     FSpieleBmp[spieler].Canvas.Brush.Color := clGreen;
+  end
+
+  else if spieler=sHinderniss then begin
+    FSpieleBmp[spieler].Canvas.Pen.Color := clRed;
+    FSpieleBmp[spieler].Canvas.Brush.Color := clRed;
   end;
 
 FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite) ;
