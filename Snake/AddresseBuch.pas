@@ -1,4 +1,4 @@
-unit AddresseBuch;
+Ôªøunit AddresseBuch;
 
 interface
 
@@ -176,7 +176,7 @@ KopfBreite:=KopfBreite+Eingabe;
 
   else if (SpielStatus[Kopfbreite,Kopfhoehe]=sSnake) or (SpielStatus[Kopfbreite,Kopfhoehe]=sHinderniss) then begin
   SnakeMove.Enabled:=false;
-  showmessage('Verloren Schlangen l‰nge '+inttostr(SnakeLen+1));
+  showmessage('Verloren Schlangen l√§nge '+inttostr(SnakeLen+1));
   exit;
   end;
 end;
@@ -372,7 +372,7 @@ begin
 pruefen;
   if not spielaktive then begin
   SnakeMove.Enabled:=false;
-  showmessage('Verloren Schlangen l‰nge '+inttostr(SnakeLen+1));
+  showmessage('Verloren Schlangen l√§nge '+inttostr(SnakeLen+1));
   exit;
   end;
 
