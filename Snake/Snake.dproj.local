@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.273,C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\AddresseBuch.dfm=C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.529,C:\Projekte Dephi\AddresseBuch\Project1.dproj=C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.394,C:\Projekte Dephi\AddresseBuch\Snake.dproj=C:\Projekte Dephi\AddresseBuch\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.405,=C:\Projekte Dephi\Snake\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.507,C:\Projekte Dephi\Snake\Test.dfm=C:\Projekte Dephi\Snake\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.507,C:\Projekte Dephi\Snake\Test.pas=C:\Projekte Dephi\Snake\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.273,C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\AddresseBuch.pas=C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.839,C:\Projekte Dephi\AddresseBuch\AddresseBuch.dfm=C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\AddresseBuch.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.839,C:\Projekte Dephi\AddresseBuch\AddresseBuch.pas=C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\AddresseBuch.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.881,=C:\Users\ogoekcek\Documents\Embarcadero\Studio\Projekte\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
