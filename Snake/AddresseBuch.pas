@@ -73,35 +73,35 @@ begin
   end;
 
   if (SnakeEndePos=Schlange[0,1]-1) then  begin            //rechts leer
-  FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
-  FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,0,animationsbreite,Breite));
+    FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
+    FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,0,animationsbreite,Breite));
   end
 
   else if (SnakeEndePos=Schlange[0,1]+1) then begin                       //links leer
-  FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
-  FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(breite,breite,breite-animationsbreite,0));
+    FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
+    FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(breite,breite,breite-animationsbreite,0));
   end
 
   else if (SnakeEndePos2=Schlange[0,0]-1)  then begin         //links unten
-  FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
-  FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,0,breite,animationsbreite));
+    FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
+    FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,0,breite,animationsbreite));
   end
 
   else if (SnakeEndePos2=Schlange[0,0]+1)  then begin         //links oben
-  FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
-  FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
-  FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
-  FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,breite,breite,Breite-animationsbreite));
+    FSpieleBmp[SnakeEnde].Canvas.Pen.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clblack;
+    FSpieleBmp[SnakeEnde].Canvas.Rectangle(0,0,FSpieleBmp[SnakeEnde].Width, FSpieleBmp[SnakeEnde].Height);
+    FSpieleBmp[SnakeEnde].Canvas.Brush.Color:=clwhite;
+    FSpieleBmp[SnakeEnde].Canvas.FillRect(rect(0,breite,breite,Breite-animationsbreite));
   end
 
 //  end;
@@ -112,33 +112,33 @@ var
 Frame:Integer;
 begin
 
-FSpieleBmp[SnakeKopf].Canvas.Pen.Color:=clWhite;
-FSpieleBmp[SnakeKopf].Canvas.Brush.Color:=clWhite;
-FSpieleBmp[SnakeKopf].Canvas.Rectangle(0,0,FSpieleBmp[SnakeKopf].Width, FSpieleBmp[SnakeKopf].Height);
-FSpieleBmp[SnakeKopf].Canvas.Pen.Color := clBlack;
-FSpieleBmp[SnakeKopf].Canvas.Brush.Color := clBlack;
+  FSpieleBmp[SnakeKopf].Canvas.Pen.Color:=clWhite;
+  FSpieleBmp[SnakeKopf].Canvas.Brush.Color:=clWhite;
+  FSpieleBmp[SnakeKopf].Canvas.Rectangle(0,0,FSpieleBmp[SnakeKopf].Width, FSpieleBmp[SnakeKopf].Height);
+  FSpieleBmp[SnakeKopf].Canvas.Pen.Color := clBlack;
+  FSpieleBmp[SnakeKopf].Canvas.Brush.Color := clBlack;
 
 
 
-AnimationBewegung;
-//FSpieleBmp[SnakeKopf].Canvas.Rectangle(0,0,animationsbreite,breite);                //essen animation
+  AnimationBewegung;
+
   if SnakeMove.Interval<=200 then begin
-  Frame:=10;
+    Frame:=10;
   end
 
   else begin
     Frame:=6;
   end;
 
-AnimationsBreite:=AnimationsBreite+Frame;
-FGrafik.Canvas.Draw(KopfBreite*breite,KopfHoehe*breite,FSpieleBmp[SnakeKopf]);
-FGrafik.Canvas.Draw(SnakeEndePos*breite,SnakeEndePos2*breite,FSpieleBmp[SnakeEnde]);
-SpieleFeld.Canvas.Draw(0, 0, FGrafik);
+  AnimationsBreite:=AnimationsBreite+Frame;
+  FGrafik.Canvas.Draw(KopfBreite*breite,KopfHoehe*breite,FSpieleBmp[SnakeKopf]);
+  FGrafik.Canvas.Draw(SnakeEndePos*breite,SnakeEndePos2*breite,FSpieleBmp[SnakeEnde]);
+  SpieleFeld.Canvas.Draw(0, 0, FGrafik);
   if AnimationsBreite=breite then begin
-  AnimationsBreite:=0;
-  AnimationTimer.Interval:=SnakeMove.Interval div 8;
-  SpielStatus[SnakeEndePos,SnakeEndePos2]:=sLeer;
-  AnimationTimer.Enabled:=False;
+    AnimationsBreite:=0;
+    AnimationTimer.Interval:=SnakeMove.Interval div 8;
+    SpielStatus[SnakeEndePos,SnakeEndePos2]:=sLeer;
+    AnimationTimer.Enabled:=False;
   end;
 
 
@@ -149,8 +149,8 @@ procedure TForm2.Bewegungerkennen;
 var
 i:Integer;
 begin
-KopfHoehe:=KopfHoehe+andereEingabe;
-KopfBreite:=KopfBreite+Eingabe;
+  KopfHoehe:=KopfHoehe+andereEingabe;
+  KopfBreite:=KopfBreite+Eingabe;
   if SpielStatus[KopfBreite,KopfHoehe]=sLeer then begin
     SnakeEndePos:=schlange[0,1];
     SnakeEndePos2:=schlange[0,0];
@@ -171,13 +171,13 @@ KopfBreite:=KopfBreite+Eingabe;
     schlange[snakelen,1]:=KopfBreite;
     schlange[snakelen,0]:=KopfHoehe;
     Powererstellen;
-     AnimationTimer.Enabled:=True;
+    AnimationTimer.Enabled:=True;
   end
 
   else if (SpielStatus[Kopfbreite,Kopfhoehe]=sSnake) or (SpielStatus[Kopfbreite,Kopfhoehe]=sHinderniss) then begin
-  SnakeMove.Enabled:=false;
-  showmessage('Verloren Schlangen länge '+inttostr(SnakeLen+1));
-  exit;
+    SnakeMove.Enabled:=false;
+    showmessage('Verloren Schlangen länge '+inttostr(SnakeLen+1));
+    exit;
   end;
 end;
 
@@ -185,23 +185,23 @@ procedure TForm2.FormCreate(Sender: TObject);
 
 
 begin
-FGrafik := TBitmap.Create;
-FSpieleBmp[sSnake]:= TBitMap.Create;
-FspieleBmp[sLeer]:= TBitMap.Create;
-FspieleBmp[sPower]:= TBitMap.Create;
-FSpieleBmp[SnakeKopf]:= TBitMap.Create;
-FSpieleBmp[SnakeEnde]:= TBitMap.Create;
-FSpieleBmp[sHinderniss]:= TBitMap.Create;
-FGrafik.Width := SpieleFeld.Width;
-FGrafik.Height := SpieleFeld.Height;
-Gitter;
-a:=FGrafik.Width div 30+1;
-b:=FGrafik.height div 30+1;
-SetLength(SpielStatus,a,b);
-breite:=30;
-AnimationsBreite:=0;
-AnimationTimer.Interval:=SnakeMove.Interval div 6;
-form2.DoubleBuffered:=True;
+  FGrafik := TBitmap.Create;
+  FSpieleBmp[sSnake]:= TBitMap.Create;
+  FspieleBmp[sLeer]:= TBitMap.Create;
+  FspieleBmp[sPower]:= TBitMap.Create;
+  FSpieleBmp[SnakeKopf]:= TBitMap.Create;
+  FSpieleBmp[SnakeEnde]:= TBitMap.Create;
+  FSpieleBmp[sHinderniss]:= TBitMap.Create;
+  FGrafik.Width := SpieleFeld.Width;
+  FGrafik.Height := SpieleFeld.Height;
+  Gitter;
+  a:=FGrafik.Width div 30+1;
+  b:=FGrafik.height div 30+1;
+  SetLength(SpielStatus,a,b);
+  breite:=30;
+  AnimationsBreite:=0;
+  AnimationTimer.Interval:=SnakeMove.Interval div 6;
+  form2.DoubleBuffered:=True;
 
 
 
@@ -256,23 +256,23 @@ procedure TForm2.FormPaint(Sender: TObject);
 
 begin
 
-gitter;
-Symbolerstellen(breite,sSnake);
-Symbolerstellen(breite,sLeer);
-symbolerstellen(breite,sPower);
-symbolerstellen(breite,SnakeKopf);
-symbolerstellen(breite,SnakeEnde);
-symbolerstellen(breite,sHinderniss);
-NeuesSpiel;
+  gitter;
+  Symbolerstellen(breite,sSnake);
+  Symbolerstellen(breite,sLeer);
+  symbolerstellen(breite,sPower);
+  symbolerstellen(breite,SnakeKopf);
+  symbolerstellen(breite,SnakeEnde);
+  symbolerstellen(breite,sHinderniss);
+  NeuesSpiel;
 end;
 
 procedure TForm2.Gitter;
 var
-  i,j: Integer;
+i,j: Integer;
 begin
-FGrafik.Canvas.Pen.Color:=clWhite;
-FGrafik.Canvas.Brush.Color:=clWhite;
-FGrafik.Canvas.Rectangle(0,0,FGrafik.Width, FGrafik.Height);
+  FGrafik.Canvas.Pen.Color:=clWhite;
+  FGrafik.Canvas.Brush.Color:=clWhite;
+  FGrafik.Canvas.Rectangle(0,0,FGrafik.Width, FGrafik.Height);
   FGrafik.Canvas.Pen.Color := clBlack;
 
   for I:=0  to a-1 do begin
@@ -284,7 +284,7 @@ FGrafik.Canvas.Rectangle(0,0,FGrafik.Width, FGrafik.Height);
 
 
       else
-    FGrafik.Canvas.Draw(i*breite,j*breite,FSpieleBmp[SpielStatus[i,j]])
+      FGrafik.Canvas.Draw(i*breite,j*breite,FSpieleBmp[SpielStatus[i,j]])
     end;
   end;
   SpieleFeld.Canvas.Draw(0, 0, FGrafik);
@@ -296,47 +296,43 @@ procedure TForm2.HinternissErstellen;
 var
 HindernissBreite, HindernissHoehe:Integer;
 begin
-HindernissBreite:=0;
-HindernissHoehe:=0;
-while (HindernissBreite=0) or (HindernissHoehe=0) do begin
-  HindernissBreite:=random(a)-2;
-  HindernissHoehe:=random(b)-7;
-end;
+  HindernissBreite:=0;
+  HindernissHoehe:=0;
+  while (HindernissBreite=0) or (HindernissHoehe=0) do begin
+    HindernissBreite:=random(a)-2;
+    HindernissHoehe:=random(b)-7;
+  end;
 
 
 end;
 
-procedure animation; begin
-
-end;
 procedure TForm2.NeuesSpiel;
 var
 i,j:Integer;
 begin
-snakelen:=2;
-setLength(schlange,snakelen+1,2);
-schlange[2,1]:=3;
-schlange[2,0]:=3;
-schlange[1,1]:=2;
-schlange[1,0]:=3;
-schlange[0,1]:=1;
-schlange[0,0]:=3;
-KopfHoehe:=3;
-KopfBreite:=3;
-for i := 0 to a-1 do
-  begin
-    for j := 0 to b-1 do
-      SpielStatus[i,j] := sLeer;
+  snakelen:=2;
+  setLength(schlange,snakelen+1,2);
+  schlange[2,1]:=3;
+  schlange[2,0]:=3;
+  schlange[1,1]:=2;
+  schlange[1,0]:=3;
+  schlange[0,1]:=1;
+  schlange[0,0]:=3;
+  KopfHoehe:=3;
+  KopfBreite:=3;
+  for i := 0 to a-1 do begin
+      for j := 0 to b-1 do
+        SpielStatus[i,j] := sLeer;
   end;
-SpielStatus[3,3]:=sSnake;
-SpielStatus[2,3]:=sSnake;
-SpielStatus[1,3]:=sSnake;
-Powererstellen;
-HinternissErstellen;
-spielaktive:=True;
-Eingabe:=1;
-andereEingabe:=0;
-SnakeMove.Enabled:=True;
+  SpielStatus[3,3]:=sSnake;
+  SpielStatus[2,3]:=sSnake;
+  SpielStatus[1,3]:=sSnake;
+  Powererstellen;
+  HinternissErstellen;
+  spielaktive:=True;
+  Eingabe:=1;
+  andereEingabe:=0;
+  SnakeMove.Enabled:=True;
 
 end;
 
@@ -348,8 +344,8 @@ j:=b-1;
     PowerBreite:=random(i);
     PowerLaenge:=random(j);
       while Spielstatus[PowerBreite,PowerLaenge]=sSnake do begin
-      PowerBreite:=random(i);
-      PowerLaenge:=random(j);
+        PowerBreite:=random(i);
+        PowerLaenge:=random(j);
       end;
     Spielstatus[PowerBreite,PowerLaenge]:=sPower;
 
@@ -358,8 +354,7 @@ end;
 procedure TForm2.Pruefen;
 begin
   if (KopfBreite>a-2) or (KopfBreite<0)or (KopfHoehe>b-2) or (KopfHoehe<0) then begin
-  spielaktive:=false;
-
+    spielaktive:=false;
   end;
 
 end;
@@ -367,13 +362,13 @@ end;
 procedure TForm2.SnakeMoveTimer(Sender: TObject);
 begin
   if SnakeMove.Interval>100 then begin
-  SnakeMove.Interval:= 500-50*SnakeLen;
+    SnakeMove.Interval:= 500-50*SnakeLen;
   end;
-pruefen;
+  pruefen;
   if not spielaktive then begin
-  SnakeMove.Enabled:=false;
-  showmessage('Verloren Schlangen länge '+inttostr(SnakeLen+1));
-  exit;
+    SnakeMove.Enabled:=false;
+    showmessage('Verloren Schlangen länge '+inttostr(SnakeLen+1));
+    exit;
   end;
 
 Bewegungerkennen;
@@ -385,11 +380,11 @@ end;
 
 procedure TForm2.SymbolErstellen(breite: Integer; spieler: spieleStatus);
 begin
-FSpieleBmp[spieler].Width:= Breite;
-FSpieleBmp[spieler].Height:= Breite;
-FSpieleBmp[spieler].Canvas.Pen.Color := clWhite;
-FSpieleBmp[spieler].Canvas.Brush.Color := clWhite;
-FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite);
+  FSpieleBmp[spieler].Width:= Breite;
+  FSpieleBmp[spieler].Height:= Breite;
+  FSpieleBmp[spieler].Canvas.Pen.Color := clWhite;
+  FSpieleBmp[spieler].Canvas.Brush.Color := clWhite;
+  FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite);
   if spieler=sLeer then begin
     FSpieleBmp[spieler].Canvas.Pen.Color := clWhite;
     FSpieleBmp[spieler].Canvas.Brush.Color := clWhite;
@@ -410,7 +405,7 @@ FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite);
     FSpieleBmp[spieler].Canvas.Brush.Color := clRed;
   end;
 
-FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite) ;
+  FSpieleBmp[spieler].Canvas.Rectangle(0,0,breite,breite) ;
 end;
 
 end.
